@@ -1,0 +1,5 @@
+ S/N |     FULL NAME      |  GENDER  |        CITY        |  THEORY  | PRACTICE 
+  1  |    Pham The Anh    |  Fluid   |      Vung Tau      |    75    |    75    
+  2  |     Le Thi Nga     |  Female  |      Vung Tau      |    70    |    20    
+  3  |    Le Duc Manh     |   Male   |     Binh Duong     |   100    |    20    
+  4  | Le Nguyen Bao Tram |  Female  |     Binh Duong     |    80    |    80    

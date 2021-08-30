@@ -1,6 +1,0 @@
-1,Pham The Anh,Male,Vung Tau,75,75
-2,Le Thi Nga,Female,Vung Tau,30,30
-3,Le Duc Manh,Male,Binh Duong,10,10
-4,Le Nguyen Bao Tram,Female,Binh Duong,80,80
-5,Le Khanh Linh,Female,Binh Duong,80,30
-6,Pham Ngoc Que Chi,Female,Vung Tau,100,100
