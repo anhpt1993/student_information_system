@@ -1,10 +1,10 @@
 from add_info import print_data, choose_gender, input_score
 from read_write import *
 
-def choose_SN(data):
+def choose_SN(data, text):
     while True:
         try:
-            SN = int(input("Which serial number that you want to update?: "))
+            SN = int(input(text))
             for element in data:
                 if int(element.split("|")[0].strip()) == SN:
                     return SN
@@ -44,7 +44,7 @@ if __name__ == '__main__':
     fi = "data.txt"
     data = read_data(fi).split("\n")
     print_data(data, "all")
-    index = choose_SN(data)
+    index = choose_SN(data, "Which serial number do you want to update?: ")
     choice = choose_correct_info()
     if choice == 1:
         correct_data = input("Correct name: \t")

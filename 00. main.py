@@ -2,6 +2,7 @@
 from read_write import *
 from add_info import *
 from update_info import *
+from remove_info import *
 
 def choose_option():
     while True:
@@ -33,17 +34,21 @@ def try_again(text):
         return False
 
 if __name__ == '__main__':
+    fi = "data.txt"
+    fo = "data.txt"
+    data = read_data(fi).split("\n")
     while True:
-        fi = "data.txt"
-        fo = "data.txt"
-        data = read_data(fi).split("\n")
         option = choose_option()
         if option == 1:
-            data.append(add_info(data))
+            while True:
+                data.append(add_info(data))
+                if try_again("Do you want to add more student information? (Y/N): ") == False:
+                    print("DONE!!!")
+                    break
         elif option == 2:
             while True:
                 print_data(data, "all")
-                index = choose_SN(data)
+                index = choose_SN(data, "Which serial number do you want to update?: ")
                 choice = choose_correct_info()
                 if choice == 1:
                     correct_data = input("Correct name: \t")
@@ -64,7 +69,7 @@ if __name__ == '__main__':
                     correct_data = input_score()
                     data[index - 1] = correct_info(data, index - 1, choice, str(correct_data))
                 if try_again("Do you want to update more? (Y/N): ") == False:
-                    print("DONE!!!")
+                    print("DONE!!!\n")
                     break
         elif option == 3:
             print_data(data, "all")
@@ -73,20 +78,30 @@ if __name__ == '__main__':
         elif option == 5:
             print_data(data, "< 75")
         elif option == 6:
-            pass
+            while True:
+                if data == [""] or data == "" or data == []:
+                    print("\nNo student information. You have to add first\n")
+                    break
+                else:
+                    print_data(data, "all")
+                    STT = choose_SN(data, "Which serial number that you want to remove?: ")
+                    data = remove_info(STT, data)
+                    data = generate_STT(data)
+                if try_again("Do you want to remove something else? (Y/N): ") == False:
+                    print("DONE!!!\n")
+                    break
         else:
             print("Bye! See you next time!!!")
             exit()
-        header = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}\n"
-        write_data(header.format("S/N", "FULL NAME", "GENDER", "CITY", "THEORY", "PRACTICE"), fo, "w")
-        for element in data:
-            temp = element.split("|")
-            if temp == [""]:
-                continue
-            else:
-                info = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}\n"
-                write_data(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]), fo, "a")
-
-        if try_again("Do you want to continue? (Y/N): ") == False:
-            print("Bye! See you next time!!!")
-            exit()
+        if try_again("Do you want to exit STUDENT INFORMATION MANAGEMENT program? (Y/N): ") == True:
+            print("\nDone. Please check detail in 'data.txt'")
+            break
+    header = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}\n"
+    write_data(header.format("S/N", "FULL NAME", "GENDER", "CITY", "THEORY", "PRACTICE"), fo, "w")
+    for element in data:
+        temp = element.split("|")
+        if temp == [""]:
+            continue
+        else:
+            info = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}\n"
+            write_data(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]), fo, "a")
