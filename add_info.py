@@ -68,22 +68,25 @@ def add_info(data):
 def print_data(data, condition):
     header = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}"
     print(header.format("S/N", "FULL NAME", "GENDER", "CITY", "THEORY", "PRACTICE"))
-    for element in data:
-        temp = element.split("|")
-        if temp == [""]:
-            continue
-        else:
-            info = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}"
-            if condition == "all":
-                print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
-            elif condition == ">= 75":
-                if (int(temp[4]) + int(temp[5])) // 2 >= 75:
-                    print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
-            elif condition == "< 75":
-                if (int(temp[4]) + int(temp[5])) // 2 < 75:
-                    print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
+    if data == [] or data == [""] or data == None:
+        print("Nil")
+    else:
+        for element in data:
+            temp = element.split("|")
+            if temp == [""]:
+                continue
             else:
-                print("Nil")
+                info = "{:^5}|{:^20}|{:^10}|{:^20}|{:^10}|{:^10}"
+                if condition == "all":
+                    print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
+                elif condition == ">= 75":
+                    if (int(temp[4]) + int(temp[5])) // 2 >= 75:
+                        print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
+                elif condition == "< 75":
+                    if (int(temp[4]) + int(temp[5])) // 2 < 75:
+                        print(info.format(temp[0], temp[1], temp[2], temp[3], temp[4], temp[5]))
+                else:
+                    print("Nil")
             
 if __name__ == "__main__":
     fi = "data.txt"

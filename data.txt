@@ -1,8 +1,8 @@
  S/N |     FULL NAME      |  GENDER  |        CITY        |  THEORY  | PRACTICE 
-  1  |     Le Thi Nga     |  Female  |      Vung Tau      |    70    |      20  
-  2  |    Le Duc Manh     |   Male   |     Binh Duong     |   100    |      20  
-  3  | Le Nguyen Bao Tram |  Female  |     Binh Duong     |    80    |      80  
-  4  |  Le Ngoc Minh Anh  |  Female  |       Sydney       |    75    |      80  
-  5  |    Le Ngoc Van     |   Male   |     Binh Duong     |    75    |      75  
-  6  |    Pham The Anh    |  Fluid   |      Vung Tau      |    7     |      80  
-  7  |    Le Ngoc Hanh    |   Male   |     Binh Duong     |   100    |     100  
+  1  |     Le Thi Nga     |  Female  |      Vung Tau      |    70    |    20
+  2  |    Le Duc Manh     |   Male   |     Binh Duong     |   100    |    20
+  3  | Le Nguyen Bao Tram |  Female  |     Binh Duong     |    80    |    80
+  4  |  Le Ngoc Minh Anh  |  Female  |       Sydney       |    75    |    80
+  5  |    Le Ngoc Van     |   Male   |     Binh Duong     |    75    |    75
+  6  |    Pham The Anh    |   Male   |      Vung Tau      |    70    |    80
+  7  |    Le Ngoc Hanh    |   Male   |     Binh Duong     |   100    |   100
